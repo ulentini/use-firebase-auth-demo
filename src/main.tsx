@@ -1,11 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./components/app"
+import "./main.css"
+import App from "./app"
 import { FirebaseAuthProvider } from "use-firebase-auth"
 import firebase from "firebase/app"
 import "firebase/auth"
 
-//TODO: move init somewhere else?
 const firebaseConfig = {
   apiKey: "AIzaSyDXzLcNE98vk-2SG-EnZATSz2yHMtDg86c",
   authDomain: "ulentini-dev-project.firebaseapp.com",
@@ -20,7 +20,9 @@ firebase.initializeApp(firebaseConfig)
 
 ReactDOM.render(
   <FirebaseAuthProvider firebase={firebase}>
-    <App />
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   </FirebaseAuthProvider>,
   document.getElementById("root"),
 )

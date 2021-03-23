@@ -1,22 +1,19 @@
 import React from "react"
-import "../css/tailwind.css"
 import { useFirebaseAuth } from "use-firebase-auth"
 import { Login } from "./login"
-
-let i = 0
 
 function App() {
   const { user, loading, error, signOut } = useFirebaseAuth()
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center font-sans">
+    <div className="h-screen flex flex-col items-center justify-center font-sans bg-gray-100 text-gray-600">
       {user ? (
         <div>
           <span>Logged in as {user.email}</span>
           <div className="mt-3 text-center">
             <button
               onClick={() => signOut()}
-              className="bg-blue-100 border border-gray-300 rounded py-2 px-4 text-lg font-semibold text-blue-500 hover:bg-gray-100 border-gray-400"
+              className="bg-green-500 rounded py-2 px-4 text-lg font-semibold text-green-50 hover:bg-green-600 mt-2"
             >
               Logout
             </button>
